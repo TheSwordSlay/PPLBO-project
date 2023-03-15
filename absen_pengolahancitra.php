@@ -63,6 +63,10 @@ if( isset($_POST["submit"]) ) {
                 <label for="nim">Nim</label>
                 <input type="text" name="nim" id="nim" required>
             </li>
+            <li>
+                <label for="kehadiran">Kehadiran</label>
+                <input type="text" name="kehadiran" id="kehadiran" required>
+            </li>
         </ul>
         <button type="submit" name="submit">Submit absen!</button>
     </form>
