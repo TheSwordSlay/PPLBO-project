@@ -1,9 +1,24 @@
+<?php
+session_start();
+
+if(!isset($_SESSION["login"])) {
+    header("Location: login.php");
+    exit;
+}
+
+require 'functions.php';
+$mahasiswa = query("SELECT * FROM user");
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Jadwal</title>
         <link rel="stylesheet" href="assets/style.css"
     </head>
+    <br>
+    <a href="logout.php">logout</a>
+    <br>
     <body>
         <header>
             <h1>TI Reg C</h1>
