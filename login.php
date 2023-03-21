@@ -23,7 +23,10 @@ if(isset($_POST["login"])) {
             $_SESSION["login"] = true;
 
             header("Location: index.php");
-        } exit;
+            exit;
+        } else {
+            $error = true;
+        }
     } 
 
     $error = true;
@@ -42,7 +45,7 @@ if(isset($_POST["login"])) {
     <h1>Halaman login</h1>
 
     <?php if (isset($error)) {?>
-        <p style="color: red, font-style: italic;">Password/username salah</p>
+        <p style="color: red;, font-style: italic;">Password/username salah</p>
     <?php }?>
 
     <form action="" method="POST">
