@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitdff756888c1d715dd79b9afdf6a43bb5
+class ComposerStaticInit98565dbbb6b52fea13c64ae6e1e139c9
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -1894,6 +1894,7 @@ class ComposerStaticInitdff756888c1d715dd79b9afdf6a43bb5
         'Illuminate\\Database\\Eloquent\\Casts\\AsEnumCollection' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Casts/AsEnumCollection.php',
         'Illuminate\\Database\\Eloquent\\Casts\\AsStringable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Casts/AsStringable.php',
         'Illuminate\\Database\\Eloquent\\Casts\\Attribute' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Casts/Attribute.php',
+        'Illuminate\\Database\\Eloquent\\Casts\\Json' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Casts/Json.php',
         'Illuminate\\Database\\Eloquent\\Collection' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Collection.php',
         'Illuminate\\Database\\Eloquent\\Concerns\\GuardsAttributes' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php',
         'Illuminate\\Database\\Eloquent\\Concerns\\HasAttributes' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php',
@@ -3378,6 +3379,7 @@ class ComposerStaticInitdff756888c1d715dd79b9afdf6a43bb5
         'NunoMaduro\\Collision\\ArgumentFormatter' => __DIR__ . '/..' . '/nunomaduro/collision/src/ArgumentFormatter.php',
         'NunoMaduro\\Collision\\ConsoleColor' => __DIR__ . '/..' . '/nunomaduro/collision/src/ConsoleColor.php',
         'NunoMaduro\\Collision\\Contracts\\Adapters\\Phpunit\\HasPrintableTestCaseName' => __DIR__ . '/..' . '/nunomaduro/collision/src/Contracts/Adapters/Phpunit/HasPrintableTestCaseName.php',
+        'NunoMaduro\\Collision\\Contracts\\RenderableOnCollisionEditor' => __DIR__ . '/..' . '/nunomaduro/collision/src/Contracts/RenderableOnCollisionEditor.php',
         'NunoMaduro\\Collision\\Contracts\\RenderlessEditor' => __DIR__ . '/..' . '/nunomaduro/collision/src/Contracts/RenderlessEditor.php',
         'NunoMaduro\\Collision\\Contracts\\RenderlessTrace' => __DIR__ . '/..' . '/nunomaduro/collision/src/Contracts/RenderlessTrace.php',
         'NunoMaduro\\Collision\\Contracts\\SolutionsRepository' => __DIR__ . '/..' . '/nunomaduro/collision/src/Contracts/SolutionsRepository.php',
@@ -6257,10 +6259,10 @@ class ComposerStaticInitdff756888c1d715dd79b9afdf6a43bb5
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitdff756888c1d715dd79b9afdf6a43bb5::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitdff756888c1d715dd79b9afdf6a43bb5::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitdff756888c1d715dd79b9afdf6a43bb5::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitdff756888c1d715dd79b9afdf6a43bb5::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit98565dbbb6b52fea13c64ae6e1e139c9::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit98565dbbb6b52fea13c64ae6e1e139c9::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit98565dbbb6b52fea13c64ae6e1e139c9::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit98565dbbb6b52fea13c64ae6e1e139c9::$classMap;
 
         }, null, ClassLoader::class);
     }

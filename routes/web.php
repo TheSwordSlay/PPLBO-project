@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +14,5 @@ use App\Http\Controllers\UsersController;
 */
 
 Route::get('/', function () {
-    return view('homepage');
+    return view('home');
 });
-
-Route::view('/jadwal', 'index');
-Route::view('/login', 'login');
-Route::view('/registrasi', 'registration');
-
-Route::post('/userData', [UsersController::class, 'register']);

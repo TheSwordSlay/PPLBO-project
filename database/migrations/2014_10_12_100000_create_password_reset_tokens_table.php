@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('matkul', function (Blueprint $table) {
-            $table->id();
-            $table->string('kode_mk')->required();
-            $table->string('nama_mk')->required();
-            $table->string('hari')->required();
-            $table->string('jam')->required();
-            $table->timestamps();
+        Schema::create('password_reset_tokens', function (Blueprint $table) {
+            $table->string('email')->primary();
+            $table->string('token');
+            $table->timestamp('created_at')->nullable();
         });
     }
 
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('matkul');
+        Schema::dropIfExists('password_reset_tokens');
     }
 };
