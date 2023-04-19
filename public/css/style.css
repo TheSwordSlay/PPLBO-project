@@ -83,6 +83,7 @@ hr {
 
 .subject-name {
     color: #555555;
+    /* padding: 0.5rem; */
     
 }
 
@@ -90,6 +91,7 @@ hr {
     color: #808080;
     font-size: 0.93rem;
     margin-top: -0.75rem;
+    /* padding: 0.5rem; */
 }
 
 
