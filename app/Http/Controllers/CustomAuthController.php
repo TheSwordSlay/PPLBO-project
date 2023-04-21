@@ -24,12 +24,17 @@ class CustomAuthController extends Controller
             'nim'=>'required|unique:users',
             'password'=>'required|min:4'
         ]);
-        $user = new User;
-        $user->name = $request->name;
-        $user->nim = $request->nim;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $res = $user->save();
+        if(!(strcasecmp($request->name, 'admin') == 0)) {
+            $user = new User;
+            $user->name = $request->name;
+            $user->nim = $request->nim;
+            $user->email = $request->email;
+            $user->password = Hash::make($request->password);
+            $res = $user->save();
+        }
+        else {
+            $res = false;
+        }
         if($res) {
             return back()->with('success', 'Berhasil teregistrasi');
         } else {

@@ -24,5 +24,12 @@ class MataKuliahController extends Controller
              "matakuliah" => MataKuliah::all(),
         ]);
     }
+
+    public function daftarMatkul()
+    {
+        return view('tabelMatkul', [
+             "matakuliah" => MataKuliah::all(),
+        ]);
+    }
     
 }

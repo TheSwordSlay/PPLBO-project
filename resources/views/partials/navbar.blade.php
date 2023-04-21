@@ -30,6 +30,9 @@
           <li class="nav-item">
             <a class="nav-link active" href="/daftar-hadir">Daftar Absen</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/edit-matkul">Edit Mata Kuliah</a>
+          </li>
           @endif 
           <li class="nav-item">
             <a class="nav-link active" href="/logout">Logout</a>

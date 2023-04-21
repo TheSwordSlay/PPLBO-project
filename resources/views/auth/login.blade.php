@@ -45,6 +45,6 @@
             <p>Belum register? register di <a href="/registration" style="color: blue;">sini</a></p>
         </form> 
     </div>
-
+    
 </body>
 </html>
