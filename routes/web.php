@@ -27,4 +27,7 @@ Route::post('absensi', [AbsensiController::class, 'absen'])->name('absensi');
 Route::get('/dashboard', [CustomAuthController::class, 'dashboard']);
 Route::get('/logout', [CustomAuthController::class, 'logout']);
 Route::get('/daftar-hadir', [AbsensiController::class, 'getAbsen'])->middleware('isAdmin');
-Route::get('/edit-matkul', [MataKuliahController::class, 'daftarMatkul'])->middleware('isAdmin');
+Route::get('/edit-matkul', [MataKuliahController::class, 'daftarMatkul'])->middleware('isAdmin')->name('edit-matkul');
+Route::post('/update-matkul', [MataKuliahController::class, 'updateMatkul'])->middleware('isAdmin')->name('update-matkul');
+Route::post('/tambah-matkul', [MataKuliahController::class, 'tambahMatkul'])->middleware('isAdmin')->name('tambah-matkul');
+Route::get('/hapus-matkul/{id}', [MataKuliahController::class, 'hapusMatkul'])->middleware('isAdmin')->name('hapus-matkul');
