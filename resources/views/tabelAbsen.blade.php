@@ -1,60 +1,67 @@
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        td, th {
-            padding-top: 1.5rem;
-            padding-bottom: 1.5rem;
-        }
-    </style>
-</head>
+@extends('layouts/main')
 
-<body>
-    @include('partials.navbartailwind')
-    <div class=" border shadow-lg max-w-6xl mx-auto my-10 rounded-2xl overflow-hidden">
-        <table class="table-fixed border-collapse mx-auto w-full">
-            <caption></caption>
-            <thead class="text-xl text-slate-700">
-              <tr class="border-bottom border-b-[0.1rem]">
-                <th class="">No.</th>
-                <th>NIM</th>
-                <th>Nama</th>
-                <th>Tanggal</th>
-                <th>Mata Kuliah</th>
-                <th>Keterangan</th>
-              </tr>
+@section('content')
+@include('partials/navbar')
+<div class="container mt-5">
+    <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+        <div class="card-body">
+            @php
+                $j = 0;
+            @endphp
+            @foreach($absensi as $absen)
+                @php
+                    $j = $j + 1;
+                @endphp
+            @endforeach
+            @if(!($j == 0))
+            <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th class="col">No.</th>
+                    <th class="col">NIM</th>
+                    <th class="col">Nama</th>
+                    <th class="col">Tanggal</th>
+                    <th class="col">Mata Kuliah</th>
+                    <th class="col">Kehadiran</th>
+                </tr>
             </thead>
-            <tbody class="text-lg text-slate-600">
+            <tbody>
                 @php
                     {{ $i = 1; }}
                 @endphp
                 @foreach($absensi as $absen)
-                <tr class="border-bottom border-b-[0.075rem]">
-                    <td align=center>{{ $i }}.</td>
-                    <td align=center>{{$absen->nim}}</td>
-                    <td align=center>{{$absen->nama_siswa}}</td>
-                    <td align=center>{{ $absen->tanggal_absen }}</td>
-                    <td align=center>{{ $absen->mata_kuliah }}</td>
-                    <td align=center>
-                        @if($absen->kehadiran == 'Hadir')
-                        <span class="bg-blue-300 text-blue-900 px-3 py-1 font-bold text-sm rounded-lg">
-                        @elseif($absen->kehadiran == 'Izin')
-                        <span class="bg-yellow-300 text-yellow-900 px-3 py-1 font-bold text-sm rounded-lg">
-                        @else
-                        <span class="bg-stone-300 text-stone-900 px-3 py-1 font-bold text-sm rounded-lg">
+                <tr>
+                <th scope="row">{{$i}}</th>
+                    <td>{{$absen->nim}}</td>
+                    <td>{{$absen->nama_siswa}}</td>
+                    <td>{{ $absen->tanggal_absen }}</td>
+                    <td>{{ $absen->mata_kuliah }}</td>
+                    <td>
+                        @if ($absen->kehadiran == 'Hadir')
+                            <div class="card text-center bg-primary text-white" >
+                                {{ $absen->kehadiran }} 
+                            </div>              
+                        @elseif ($absen->kehadiran == 'Izin')   
+                            <div class="card text-center bg-warning text-dark" >
+                                {{ $absen->kehadiran }} 
+                            </div>
+                        @elseif ($absen->kehadiran = 'Sakit')   
+                            <div class="card text-center bg-body-secondary" >
+                                {{ $absen->kehadiran }} 
+                            </div>
                         @endif
-                            {{ $absen->kehadiran }}
-                        </span>
                     </td>
                 </tr>
                 @php
-                    {{ $i = $i + 1; }}
+                    {{ $i = $i+1; }}
                 @endphp
-                @endforeach             
+                @endforeach
             </tbody>
-          </table>
-    </div>
-</body>
+            </table>
+            @else
+            <h1>Tidak ada data yang ditemukan</h1>
+            @endif
+        </div>
+    </div>   
+</div>
+@endsection

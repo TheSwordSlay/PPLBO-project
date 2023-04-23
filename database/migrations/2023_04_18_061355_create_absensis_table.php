@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama_siswa');
             $table->string('nim');
             $table->string('mata_kuliah');
-            $table->string('tanggal_absen');
+            $table->date('tanggal_absen');
             $table->string('kehadiran');
             $table->timestamps();
         });

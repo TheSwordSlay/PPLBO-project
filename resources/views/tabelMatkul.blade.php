@@ -4,7 +4,7 @@
 @include('partials/navbar')
 <div class="container pt-5">
   <!-- Content here -->
-  <div class="card">
+  <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
   <div class="card-body">
     <!-- Button trigger modal -->
       <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#TambahMatkul">
