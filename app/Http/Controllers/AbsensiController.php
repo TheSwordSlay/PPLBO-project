@@ -48,7 +48,6 @@ class AbsensiController extends Controller
     }
 
     public function cariAbsen(Request $request) {
-        // dd($request->nama_siswa);
         if($request->nama_siswa == '*') {
             $request->nama_siswa = '';
         }
