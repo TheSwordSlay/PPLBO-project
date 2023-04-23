@@ -2,6 +2,7 @@
 
 @section('content')
 @include('partials/navbar')
+
 <div class="container pt-5">
   <!-- Content here -->
   <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
@@ -53,7 +54,7 @@
                 
             </td>
             <td>
-              <a href="/hapus-matkul/{{$mk->id}}"><button type="button" class="btn btn-danger">Hapus</button></a>
+              <a href="#" class="delete" data-id="{{$mk->id}}" data-nama="{{$mk->nama_mk}}"><button type="button" class="btn btn-danger">Hapus</button></a>
             </td>
           </tr>
             @php
@@ -66,6 +67,32 @@
   </div>
 </div>
 </div>
+
+<script>
+  $('.delete').click(function(){
+    var mkid = $(this).attr('data-id');
+    var namamk = $(this).attr('data-nama');
+    swal({
+          title: "Yakin?",
+          text: "Kamu akan menghapus data mata kuliah "+namamk+"?",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        })
+        .then((willDelete) => {
+          if (willDelete) {
+            window.location = "/hapus-matkul/"+mkid+""
+            swal("Mata kuliah berhasil dihapus!", {
+              icon: "success",
+            });
+          } else {
+            swal("Data tidak jadi dihapus!");
+          }
+        });
+  })
+
+        
+</script>
 
 @foreach($matakuliah as $mk)
 
@@ -110,7 +137,7 @@
             <input name="jam_selesai" type="time" value="{{ $mk->jam_selesai }}" class="form-control" id="jam_selesai" required>
           </div>
           <button type="submit" class="btn btn-primary">Save changes</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
         </form>
       </div>
     </div>
@@ -159,7 +186,7 @@
             <input name="jam_selesai" type="time" class="form-control" id="jam_selesai" required>
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
         </form>
       </div>
     </div>
